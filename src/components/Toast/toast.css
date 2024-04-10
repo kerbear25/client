@@ -1,0 +1,16 @@
+.toast {
+  background-color: #333;
+  border-radius: 5px;
+  bottom: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+  opacity: 0;
+  padding: 10px 20px;
+  position: fixed;
+  right: 20px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.toast.show {
+  opacity: 1;
+}
