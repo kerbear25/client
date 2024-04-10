@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './newComment.css';
 import Toast from '../Toast';
 
@@ -6,20 +7,30 @@ const NewComment = () => {
   const [name, setName] = useState<string>('');
   const [comment, setComment] = useState<string>('');
   const [showToast, setShowToast] = useState<boolean>(false);
-  const [toastMessage, setToastMessage] = useState<string>(
-    'Successfully added comment!'
-  );
+  // In the future, turn toast into state to handle errors and success messages
+  // For now, just show success message
+  const toastMessage = 'Successfully added comment!';
   const isDisabled = !name.trim() || !comment.trim();
 
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    setComment('');
-    setName('');
-    setShowToast(true);
-    setTimeout(() => {
-      setShowToast(false);
-    }, 8000); // Adjust duration of toast display
-    // TODO: Handle POST request
+    try {
+      const response = await axios.post('http://localhost:3001/createComment', {
+        name,
+        message: comment,
+      });
+      if (response.data.id) {
+        // Reset form fields and show toast
+        setComment('');
+        setName('');
+        setShowToast(true);
+        setTimeout(() => {
+          setShowToast(false);
+        }, 8000);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   const handleNameChange = (event: {
