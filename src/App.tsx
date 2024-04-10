@@ -1,10 +1,14 @@
 import './App.css';
-import { NewComment } from './components';
+import { Comment, NewComment } from './components';
+import comments from './comments.json';
 
 function App() {
   return (
     <>
       <NewComment />
+      {comments.map((comment, index) => (
+        <Comment key={index} {...comment} />
+      ))}
     </>
   );
 }

@@ -1,3 +1,4 @@
+import Comment from './Comment';
 import NewComment from './NewComment';
 
-export { NewComment };
+export { Comment, NewComment };
