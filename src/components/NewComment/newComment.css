@@ -1,3 +1,8 @@
+label .required {
+  color: red;
+  margin-left: 5px;
+}
+
 .form-container {
   width: 40%;
   margin: 0 auto;
@@ -9,9 +14,12 @@
 
 .new-comment-form input,
 .new-comment-form textarea {
+  border-radius: 5px;
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
 }
 
 .new-comment-form textarea {
@@ -26,4 +34,50 @@
   text-align: center;
   margin: 0 auto;
   display: block;
+}
+
+.new-comment-form input:focus,
+.new-comment-form textarea:focus {
+  border: 2.5px solid #8a63ff;
+  outline: none;
+}
+
+.new-comment-form input:focus,
+.new-comment-form textarea:focus {
+  border-radius: 5px;
+}
+
+.new-comment-form button {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: #8a63ff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.new-comment-form button:hover {
+  background-color: #6d41cc;
+}
+
+.new-comment-form button:active {
+  background-color: #542ba3;
+}
+
+.new-comment-form button:disabled {
+  background-color: #cccccc;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.new-comment-form button:disabled:hover {
+  background-color: #cccccc;
+}
+
+.new-comment-form button:disabled:active {
+  background-color: #cccccc;
 }
