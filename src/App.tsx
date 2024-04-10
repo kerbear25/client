@@ -17,7 +17,9 @@ function App() {
     axios
       .get('http://localhost:3001/getComments')
       .then((response) => {
-        setComments(response.data);
+        if (response.status === 200) {
+          setComments(response.data);
+        }
       })
       .catch((error) => {
         console.error('Error fetching comments:', error);
