@@ -1,8 +1,12 @@
-import React from 'react';
 import './App.css';
+import { NewComment } from './components';
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <NewComment />
+    </>
+  );
 }
 
 export default App;
