@@ -1,12 +1,7 @@
+import { CommentData } from '../../App';
 import './comment.css';
 
-interface CommentProps {
-  created: string;
-  message: string;
-  name: string;
-}
-
-const Comment = ({ created, message, name }: CommentProps) => {
+const Comment = ({ created, message, name }: CommentData) => {
   const formattedDate = new Date(created).toLocaleString();
 
   return (
