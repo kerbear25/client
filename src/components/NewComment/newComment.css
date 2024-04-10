@@ -4,8 +4,8 @@ label .required {
 }
 
 .form-container {
-  width: 40%;
   margin: 0 auto;
+  width: 40%;
 }
 
 .new-comment-form {
@@ -15,11 +15,11 @@ label .required {
 .new-comment-form input,
 .new-comment-form textarea {
   border-radius: 5px;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 100%;
 }
 
 .new-comment-form textarea {
@@ -31,9 +31,9 @@ label .required {
 }
 
 .new-comment-form button {
-  text-align: center;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .new-comment-form input:focus,
@@ -48,15 +48,15 @@ label .required {
 }
 
 .new-comment-form button {
-  text-align: center;
-  margin: 0 auto;
-  display: block;
+  background-color: #8a63ff;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
-  background-color: #8a63ff;
   color: #ffffff;
   cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-align: center;
   transition: background-color 0.3s, color 0.3s;
 }
 
