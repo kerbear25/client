@@ -3,7 +3,11 @@ import axios from 'axios';
 import './newComment.css';
 import Toast from '../Toast';
 
-const NewComment = () => {
+interface NewCommentProps {
+  onNewComment: () => void;
+}
+
+const NewComment = ({ onNewComment }: NewCommentProps) => {
   const [name, setName] = useState<string>('');
   const [comment, setComment] = useState<string>('');
   const [showToast, setShowToast] = useState<boolean>(false);
@@ -27,6 +31,8 @@ const NewComment = () => {
         setTimeout(() => {
           setShowToast(false);
         }, 8000);
+        // Trigger parent component to fetch comments
+        onNewComment();
       }
     } catch (error) {
       console.error('Error:', error);
